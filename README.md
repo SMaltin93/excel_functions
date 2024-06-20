@@ -18,8 +18,18 @@ pip install openpyxl
 
 ## Usage Instructions
 
-1. **Clone the Repository:**
+
+1. **Clone/Download the Repository:**
+
+   - If you do not have Git installed:
    ```bash
+   Go to the repository page on GitHub.
+   Click on the "Code" button.
+   Select "Download ZIP".
+   Extract the ZIP file to your desired location.
+   Open a terminal or command prompt and navigate to the extracted directory.
+
+   - OR use git 
    git clone <repository-url>
    cd <repository-directory>
    ```
