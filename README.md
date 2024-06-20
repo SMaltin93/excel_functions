@@ -37,11 +37,11 @@ pip install openpyxl
 
 5. **Select the Source and Template Files:**
    - The script will display a list of Excel files found in the directory.
-   - 
+   - Remember the source and template files-numbers that is showing from the prompt and then enter the corresponding number.
 
 6. **Output File:**
    - The script will create a new Excel file named `output.xlsx` in the same directory with the copied data.
-   - Remember the source and template files-numbers that is showing from the prompt and then enter the corresponding number.
+
 
 ## Example
 
