@@ -22,7 +22,7 @@ for row in dataframe1.iter_rows():
             cell.value = filter_non_english_characters(cell.value)
 
 # Try saving the modified workbook to a new file to preserve the original
-new_workbook_path = "ModifiedFBS_NOVO_DS1_R6-2_240408.xlsx"
+new_workbook_path = "Modified.xlsx"
 dataframe.save(new_workbook_path)
 
 # Try opening the new workbook to check for issues

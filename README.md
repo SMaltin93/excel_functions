@@ -73,3 +73,35 @@ python to_template.py
 
 
 
+
+## excel_cleaner.py
+
+
+## Prerequisites
+
+Ensure you have Python installed on your system along with the required libraries. You can install the necessary Python libraries using `pip`:
+
+```bash
+pip install openpyxl
+```
+
+## Usage
+
+1. **Prepare the Excel File:**
+   - Place the Excel file you want to process in the same directory as the script.
+   - Ensure the file is named `output.xlsx`, or modify the script to match the name of your Excel file.
+
+2. **Run the Script:**
+   - Execute the Python script using the command line:
+
+   ```bash
+   python filter_excel.py
+   ```
+
+   - The script will load the `output.xlsx` file, filter out non-English characters, and save the modified content to a new file named `Modified.xlsx`.
+
+3. **Check the Results:**
+   - The new Excel file (`Modified.xlsx`) will be saved in the same directory.
+   - The script will attempt to open the new file to verify it was saved correctly. If successful, a confirmation message will be printed.
+
+
