@@ -95,7 +95,7 @@ pip install openpyxl
    - Execute the Python script using the command line:
 
    ```bash
-   python filter_excel.py
+   python excel_cleaner.py
    ```
 
    - The script will load the `output.xlsx` file, filter out non-English characters, and save the modified content to a new file named `Modified.xlsx`.
