@@ -1,7 +1,5 @@
 # excel_functions
 
-## to_template.py
-
 This contains a script that allows users to copy values from a source Excel file to a template Excel file, saving the result as a new output file. It utilizes the `tkinter` library for GUI dialogs and `openpyxl` for Excel file manipulation.
 
 ## Prerequisites
@@ -35,51 +33,62 @@ pip install openpyxl
    cd <repository-directory>
    ```
 
-2. **Prepare Your Files:**
-   - Place your source and template Excel files in the same directory as the script. Ensure these files have the `.xlsx` extension.
+2. **Prepare the Excel Files:**
 
-3. **Run the Script:**
-   ```bash
-   python script.py
-   ```
-
-4. **Input the Maximum Column and Row:**
-   - The script will prompt you to enter the maximum column and row to copy. Enter these values based on your data range.
-
-5. **Select the Source and Template Files:**
-   - The script will display a list of Excel files found in the directory.
-   - Remember the source and template files-numbers that is showing from the prompt and then enter the corresponding number.
-
-6. **Output File:**
-   - The script will create a new Excel file named `output.xlsx` in the same directory with the copied data.
+1. Place the Excel files you want to use (source and template) in the same directory as the script.
+2. Ensure the files are in `.xlsx` format.
 
 
-## Example
+### 1. Run the Script:
+
+Execute the Python script using the command line:
 
 ```bash
 python to_template.py
 ```
 
-1. **Input Maximum Column and Row:**
-   - Enter `17` for the maximum column (e.g., column Q).
-   - Enter `100` for the maximum row.
+### 2. Select the Files:
 
-2. **Select Files:**
-   - Choose the source file number from the displayed list.
-   - Choose the template file number from the displayed list.
+- The script will display a list of all `.xlsx` files in the directory.
+- You will be prompted to select the **source file** and the **template file** by entering the corresponding numbers from the list.
 
-3. **Output:**
-   - The script generates an `output.xlsx` file with the copied data.
+### 3. Define the Range:
 
+- After selecting the files, you will be asked to define the maximum column and row to copy:
+  - **Column**: Enter the maximum column number to copy (e.g., `17` for column `Q`).
+  - **Row**: Enter the maximum row number to copy (e.g., `100`).
 
+### 4. Output File Name:
 
+- You will be prompted to enter the name for the output file.
+- The output file will be saved in the same directory as the script with the specified name.
+
+### 5. Check the Results:
+
+- The script will copy the data from the source file to the template within the specified range.
+- The modified template will be saved as a new Excel file with the name you provided.
+
+## Example Workflow
+
+1. **Prepare Files**: Place `data.xlsx` (source) and `template.xlsx` in the same directory as the script.
+2. **Run Script**: Execute the script using `python excel_data_copier.py`.
+3. **Select Files**: Choose `data.xlsx` as the source and `template.xlsx` as the template.
+4. **Define Range**: Enter `17` for columns (up to column `Q`) and `100` for rows (up to row `100`).
+5. **Output File Name**: Enter `final_output` when prompted. The file `final_output.xlsx` will be created.
+
+## Additional Information
+
+- **Default File Handling**: If no file name is provided, the output file will default to `output.xlsx`.
+- **Column and Row Limits**: The script allows copying up to the maximum possible columns (256) and rows (1,048,576) supported by Excel.
 
 ## excel_cleaner.py
 
 
+This script is designed to clean and process Excel files by filtering out non-English characters and replacing specific non-ASCII characters with their ASCII equivalents. The cleaned data is saved in a new Excel file.
+
 ## Prerequisites
 
-Ensure you have Python installed on your system along with the required libraries. You can install the necessary Python libraries using `pip`:
+Ensure you have Python installed on your system. Additionally, you will need the `openpyxl` library to work with Excel files. You can install this library using pip:
 
 ```bash
 pip install openpyxl
@@ -87,21 +96,49 @@ pip install openpyxl
 
 ## Usage
 
-1. **Prepare the Excel File:**
-   - Place the Excel file you want to process in the same directory as the script.
-   - Ensure the file is named `output.xlsx`, or modify the script to match the name of your Excel file.
+### 1. Prepare the Excel File:
 
-2. **Run the Script:**
-   - Execute the Python script using the command line:
+1. Place the Excel file(s) you want to process in the same directory as the script.
+2. The script will automatically list all `.xlsx` files in the directory, allowing you to select the one you wish to clean.
 
-   ```bash
-   python excel_cleaner.py
-   ```
+### 2. Run the Script:
 
-   - The script will load the `output.xlsx` file, filter out non-English characters, and save the modified content to a new file named `Modified.xlsx`.
+Execute the Python script using the command line:
 
-3. **Check the Results:**
-   - The new Excel file (`Modified.xlsx`) will be saved in the same directory.
-   - The script will attempt to open the new file to verify it was saved correctly. If successful, a confirmation message will be printed.
+```bash
+python excel_cleaner.py
+```
+
+### 3. Select the File:
+
+- The script will prompt you to select the Excel file to clean from a list of available files in the directory.
+- Use the number corresponding to your desired file to select it.
+
+### 4. Cleaning Process:
+
+- The script processes the selected file by filtering out non-English characters by default.
+- Additional functions for replacing specific characters (`ø`, `ö`, `å`, `ä`, `º`, `≤`, etc.) with their ASCII equivalents are available. These can be activated by uncommenting the relevant lines in the script.
+
+### 5. Check the Results:
+
+- After processing, the script will save the cleaned content to a new Excel file. The new file is named by appending `_cleaned` to the original filename (e.g., `original_file_cleaned.xlsx`).
+- The script will attempt to open the new file to verify that it was saved correctly. If successful, a confirmation message will be printed in the console.
+
+## Example Output
+
+For an Excel file named `output.xlsx`, the cleaned file will be saved as `output_cleaned.xlsx` in the same directory.
+
+## Additional Information
+
+- **Filtering Non-English Characters**: By default, the script removes all non-ASCII characters.
+- **Character Replacements**: 
+  - `ø` can be replaced with `phase`
+  - `ö` can be replaced with `oe`
+  - `å` can be replaced with `aa`
+  - `ä` can be replaced with `ae`
+  - `º` can be replaced with `degrees`
+  - `≤` can be replaced with `<=`
+  
+  To enable these replacements, uncomment the relevant lines in the script.
 
 

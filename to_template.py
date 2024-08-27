@@ -4,7 +4,6 @@ import os
 import openpyxl
 
 
-
 def copy_values_to_template(source_file, template_file, output_file, max_column=17, max_row=100):
     # Load the workbook from the source file and the template file
     source_wb = openpyxl.load_workbook(source_file)
@@ -20,6 +19,8 @@ def copy_values_to_template(source_file, template_file, output_file, max_column=
     # Save the modified template to a new output file
     template_wb.save(output_file)
 
+
+
 def get_column_row():
     root = tk.Tk()
     root.withdraw()  # Hide the tkinter root window
@@ -33,21 +34,18 @@ def read_files():
     file_list = [file for file in os.listdir() if file.endswith(".xlsx")]
     return file_list
 
+
 def select_files(file_list):
     # Let the user select the source and template files
-    if not file_list:
-        print("No Excel files found.")
-        return None
-
     root = tk.Tk()
     root.withdraw()
-    messagebox.showinfo("Files List", "\n".join(f"{i+1}. {file}" for i, file in enumerate(file_list)))  # Show file list in a message box
+    ## show box of all files
 
     max_files = len(file_list)
-    source_file_number = simpledialog.askinteger("Input", f"Select the source file by entering a number from 1 to {max_files}:", parent=root, minvalue=1, maxvalue=max_files)
+    # shose the numberr from the list 
+    source_file_number = simpledialog.askinteger("Input", f"Select the source file by entering a number from 1 to {max_files} from below list:\n\n" + "\n".join(f"{i+1}. {file}" for i, file in enumerate(file_list)), parent=root, minvalue=1, maxvalue=max_files)
     # delete the source file from the list
-    messagebox.showinfo("Files List", "\n".join(f"{i+1}. {file}" for i, file in enumerate(file_list)))  # Show file list in a message box
-    template_file_number = simpledialog.askinteger("Input", f"Select the template file by entering a number from 1 to {max_files}:", parent=root, minvalue=1, maxvalue=max_files)
+    template_file_number = simpledialog.askinteger("Input", f"Select the template file by entering a number from 1 to {max_files} from below list:\n\n" + "\n".join(f"{i+1}. {file}" for i, file in enumerate(file_list)), parent=root, minvalue=1, maxvalue=max_files)
     root.destroy()
 
     if source_file_number is not None:
@@ -60,15 +58,14 @@ def select_files(file_list):
 # Usage of the function
  
 if __name__ == '__main__':
-    max_column, max_row = get_column_row()
     file_list = read_files()
-    source_file, template_file = select_files(file_list)
-
-
-    if source_file is None or template_file is None:
-        print("Invalid file selection.")
+    if not file_list:
+        messagebox.showinfo("Files List", "No Excel files found in the current directory.")
         exit()
-    
-    output_file = "output.xlsx"
-
+    source_file, template_file = select_files(file_list)
+    max_column, max_row = get_column_row()
+    # Ask the user for the output file name
+    input = simpledialog.askstring("Input", "Enter the name of the output file (e.g., output):")
+    file_name = input + ".xlsx" if input else "output.xlsx"
+    output_file = file_name
     copy_values_to_template(source_file, template_file, output_file, max_column, max_row)
