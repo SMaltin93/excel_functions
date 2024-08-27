@@ -33,12 +33,13 @@ pip install openpyxl
    cd <repository-directory>
    ```
 
-2. **Prepare the Excel Files:**
-
-1. Place the Excel files you want to use (source and template) in the same directory as the script.
-2. Ensure the files are in `.xlsx` format.
-
 ## to_template.py ##################################
+
+**Prepare the Excel Files:**
+
+Place the Excel files you want to use (source and template) in the same directory as the script.
+Ensure the files are in `.xlsx` format.
+
 ### 1. Run the Script:
 
 Execute the Python script using the command line:
