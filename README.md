@@ -38,7 +38,7 @@ pip install openpyxl
 1. Place the Excel files you want to use (source and template) in the same directory as the script.
 2. Ensure the files are in `.xlsx` format.
 
-
+## to_template.py ##################################
 ### 1. Run the Script:
 
 Execute the Python script using the command line:
@@ -81,7 +81,7 @@ python to_template.py
 - **Default File Handling**: If no file name is provided, the output file will default to `output.xlsx`.
 - **Column and Row Limits**: The script allows copying up to the maximum possible columns (256) and rows (1,048,576) supported by Excel.
 
-## excel_cleaner.py
+## excel_cleaner.py #############################
 
 
 This script is designed to clean and process Excel files by filtering out non-English characters and replacing specific non-ASCII characters with their ASCII equivalents. The cleaned data is saved in a new Excel file.
@@ -99,7 +99,7 @@ pip install openpyxl
 ### 1. Prepare the Excel File:
 
 1. Place the Excel file(s) you want to process in the same directory as the script.
-2. The script will automatically list all `.xlsx` files in the directory, allowing you to select the one you wish to clean.
+2. The script will automatically list all `.xlsx` files in the directory.
 
 ### 2. Run the Script:
 
